@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acordeón de Fútbol</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+        }
+
+        h1 {
+            color: #1e3c72;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .soccer-icon {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos del acordeón */
+        .accordion {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid #1e3c72;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+
+        .accordion-header {
+            background: #f8f9fa;
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: #e3f2fd;
+        }
+
+        .accordion-header h3 {
+            color: #1e3c72;
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .accordion-icon {
+            font-size: 1.5rem;
+            color: #1e3c72;
+            transition: transform 0.3s ease;
+            font-weight: bold;
+        }
+
+        .accordion-content {
+            background: white;
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-content p {
+            color: #555;
+            line-height: 1.6;
+            padding: 20px 0;
+            margin: 0;
+        }
+
+        /* Clase para cuando el acordeón está abierto */
+        .accordion-item.active .accordion-header {
+            background: #1e3c72;
+        }
+
+        .accordion-item.active .accordion-header h3 {
+            color: white;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+            color: white;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+        }
+
+        /* Estilos para información adicional */
+        .fun-fact {
+            background: #e8f5e8;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+
+        .highlight {
+            color: #1e3c72;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="soccer-icon">⚽</div>
+        <h1>Preguntas Frecuentes de Fútbol</h1>
+        <p class="subtitle">Todo lo que siempre quisiste saber sobre el deporte rey</p>
+        
+        <div class="accordion">
+            <!-- Elemento 1 del acordeón -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3>¿Cuánto dura un partido de fútbol?</h3>
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Un partido de fútbol profesional dura <span class="highlight">90 minutos</span>, divididos en dos tiempos de 45 minutos cada uno.</p>
+                    <div class="fun-fact">
+                        ⚡ <strong>Dato curioso:</strong> El árbitro puede añadir tiempo adicional (tiempo de descuento) para compensar las interrupciones durante el partido.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Elemento 2 del acordeón -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3>¿Qué es el fuera de juego?</h3>
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Un jugador está en posición de fuera de juego si se encuentra más cerca de la línea de meta contraria que el balón y el <span class="highlight">penúltimo defensor</span> cuando el balón es jugado por un compañero.</p>
+                    <div class="fun-fact">
+                        ⚡ <strong>Dato curioso:</strong> No es fuera de juego si el jugador está en su propia mitad del campo o si recibe el balón directamente de un saque de meta, de banda o córner.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Elemento 3 del acordeón -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3>¿Cuántos cambios se permiten en un partido?</h3>
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div class="accordion-content">
+                    <p>En la mayoría de competiciones profesionales se permiten <span class="highlight">5 cambios por equipo</span> durante un partido, que deben realizarse en un máximo de 3 oportunidades.</p>
+                    <div class="fun-fact">
+                        ⚡ <strong>Dato curioso:</strong> Esta regla se amplió temporalmente durante la pandemia de COVID-19 y luego se mantuvo en muchas competiciones.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Elemento 4 del acordeón -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3>¿Qué es un hat-trick?</h3>
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Un hat-trick ocurre cuando un jugador anota <span class="highlight">tres goles</span> en un mismo partido. Existen variantes como el "perfect hat-trick" (un gol con cada pie y uno de cabeza).</p>
+                    <div class="fun-fact">
+                        ⚡ <strong>Dato curioso:</strong> El término proviene del cricket, donde se le regalaba un sombrero (hat) al jugador que lograba tres wickets consecutivos.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Elemento 5 del acordeón -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3>¿Cuáles son las medidas de una cancha de fútbol?</h3>
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Las dimensiones oficiales son:</p>
+                    <ul style="padding: 15px; color: #555;">
+                        <li><strong>Largo:</strong> 90-120 metros</li>
+                        <li><strong>Ancho:</strong> 45-90 metros</li>
+                        <li><strong>Área penal:</strong> 16.5m desde el poste</li>
+                        <li><strong>Área de meta:</strong> 5.5m desde el poste</li>
+                    </ul>
+                    <div class="fun-fact">
+                        ⚡ <strong>Dato curioso:</strong> El campo del Estadio Azteca en México es uno de los más grandes del mundo, con 105m x 68m.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Elemento 6 del acordeón -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3>¿Qué significa la tarjeta amarilla y roja?</h3>
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div class="accordion-content">
+                    <p><span class="highlight">Tarjeta amarilla:</span> Es una advertencia por conducta antideportiva. Dos amarillas en un mismo partido equivalen a una roja.</p>
+                    <p><span class="highlight">Tarjeta roja:</span> Significa expulsión inmediata del partido por falta grave.</p>
+                    <div class="fun-fact">
+                        ⚡ <strong>Dato curioso:</strong> Las tarjetas se implementaron por primera vez en la Copa Mundial de 1970, inspiradas en los semáforos (amarillo = precaución, rojo = alto).
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript simple para el acordeón
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            
+            accordionItems.forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                
+                header.addEventListener('click', function() {
+                    // Cerrar todos los demás items
+                    accordionItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Abrir o cerrar el item clickeado
+                    item.classList.toggle('active');
+                });
+            });
+        });
+
+        // Explicación del código:
+        // 1. Esperamos a que la página cargue completamente
+        // 2. Seleccionamos todos los elementos del acordeón
+        // 3. A cada elemento le añadimos un "escuchador" de clics
+        // 4. Cuando se hace clic en un elemento:
+        //    - Cerramos todos los demás
+        //    - Abrimos el que se clickeó (si ya estaba abierto, se cierra)
+    </script>
+</body>
+</html>
